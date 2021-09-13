@@ -64,11 +64,11 @@ namespace DevIO.Business.Services
                 Notify("O fornecedor possui produtos cadastrados!");
                 return;
             }
-            var endereco = await _addressRepository.GetAddressBySupplier(id);
+            var address = await _addressRepository.GetAddressBySupplier(id);
 
-            if (endereco != null)
+            if (address != null)
             {
-                await _addressRepository.Remove(endereco.Id);
+                await _addressRepository.Remove(address.Id);
             }
 
             await _supplierRepository.Remove(id);

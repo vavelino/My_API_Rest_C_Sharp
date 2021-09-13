@@ -1,0 +1,55 @@
+﻿@using DevIO.App.Extensions;
+@model IEnumerable<DevIO.App.ViewModels.SupplierViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Fornecedores";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-info" asp-action="Create">Cadastrar Novo Fornecedor</a>
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Document)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @this.FormatDocument(item.SupplierType, item.Document)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><spam class="fa fa-search"></spam></a>
+                    <a class="btn btn-warning"  disable-by-claim-name="Supplier" disable-by-claim-value="Edit" asp-action="Edit" asp-route-id="@item.Id"><spam class="fa fa-pencil-alt"></spam></a>
+                    <a class="btn btn-danger"  disable-by-claim-name="Supplier" disable-by-claim-value="Delete" asp-action="Delete" asp-route-id="@item.Id"><spam class="fa fa-trash"></spam></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<UserSecretsId>aspnet-DevIO.App-F1E0C525-BD14-4FA2-99D6-D61A118FC227</UserSecretsId>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="automapper.extensions.microsoft.dependencyinjection" Version="8.1.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.7" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.8" />
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="ViewModels\" />
+		<Folder Include="wwwroot\Images\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\DevIO.Data\DevIO.Data.csproj" />
+	</ItemGroup>
+
+</Project>
